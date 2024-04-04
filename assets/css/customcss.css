@@ -1,0 +1,115 @@
+.slider {
+  background: rgb(103,0,0);;
+  /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+
+.slider::before,
+.slider::after {
+  /* background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); */
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  animation: scroll 90s linear infinite;
+  display: flex;
+  width: calc(230px * 14);
+}
+
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+
+  /* For webkit-based browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(103,0,0); /* Color of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the handle when hovered */
+}
+
+.gallery-container {
+  overflow: hidden;
+  height: 500px;
+  width: 300px; /* Choose your desired width */
+}
+
+.gallery {
+  display: flex;
+  width: fit-content;
+  animation: scroll 10s linear infinite;
+}
+
+.gallery img {
+  height: 500px;
+  width: auto; /* Adjust according to your needs */
+  margin-right: 10px; /* Adjust spacing between images */
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.popup img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
