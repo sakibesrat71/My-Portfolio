@@ -32,6 +32,45 @@
 .section-bg1 {
   background: #FFEFAE;
 }
+.custom-bullets {
+  list-style-type: disc; /* Default bullet style */
+}
+
+.custom-bullets li {
+  color: black; /* Text color */
+  
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 20px;
+}
+
+.custom-bullets li::before {
+  content: "•"; /* Custom bullet */
+  color: maroon; /* Maroon bullet */
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sub-bullets {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.sub-bullets li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.sub-bullets li::before {
+  content: "○"; /* White circle bullet */
+  color: maroon;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
 /* line 41, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_color.scss */
 .section-bg2 {
